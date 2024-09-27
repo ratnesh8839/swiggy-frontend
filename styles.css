@@ -1,0 +1,408 @@
+/* Reset and Global Styles */
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: local('Gilroy-Bold'), url(./src/fonts/Gilroy-Bold.ttf) format('truetype');
+  }
+    @font-face {
+        font-family: 'Gilroy';
+        src: local('Gilroy'), url(./src/fonts/Gilroy-Regular.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'Gilroy-Medium';
+        src: local('Gilroy-Medium'), url(./src/fonts/Gilroy-Medium.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'Gilroy-Light';
+        src: local('Gilroy-Light'), url(./src/fonts/Gilroy-Light.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'Gilroy-ExtraBold';
+        src: local('Gilroy-ExtraBold'), url(./src/fonts/Gilroy-ExtraBold.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'Gilroy-ExtraBoldItalic';
+        src: local('Gilroy-ExtraBoldItalic'), url(./src/fonts/Gilroy-ExtraBoldItalic.ttf) format('truetype');
+    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    /* Add a default font */
+    
+}
+.img_container::-webkit-scrollbar {
+    display: none;
+  }
+
+body {
+    /* background-color: #f4f4f9;  */
+    /* Light background for contrast */
+    color: #333; /* Darker text for better readability */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 20px; /* Add padding for spacing */
+    border-bottom: 2px solid #ccc; /* Subtle border for separation */
+    background-color: #fff; /* White background for header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+    position: sticky; /* Make the header sticky */
+    top: 0px; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other content */
+
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+
+/* Navbar Styles */
+.navbar > ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px; /* Adjust gap for consistency */
+    list-style: none;
+    padding-right: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar > ul > li {
+    padding: 10px 20px; /* Adjust padding for better spacing */
+    font-size: 18px; /* Slightly smaller font */
+    color: #555; /* Slightly darker color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar > ul > li:hover {
+    color: #007BFF; /* Change color on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Body Styles */
+.body {
+    padding: 20px;
+}
+
+/* Container for Cards */
+.res_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px; /* Add gap between items */
+    padding: 80px;
+}
+
+/* Card Item Styles */
+.item {
+    width: 250px;
+    height: 500px;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* background-color: #fff; */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.item_image {
+    width: 100%;
+    height: 55%;
+    border-radius: 20px; 
+    object-fit: cover; /* Ensure image covers the area */
+    border-bottom: 1px solid #ddd; /* Border between image and content */
+}
+
+.content {
+    padding: 10px; /* Padding inside the card content */
+    font-family: 'Gilroy', sans-serif; /* Ensure correct font-family */
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 1.2; /* Adjust line-height for readability */
+    letter-spacing: -0.3px;
+    overflow-wrap: break-word; /* Prevent text overflow */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0; /* Reset margin */
+}
+a{
+    text-decoration: none;
+    list-style: none;
+    color: #333;
+    cursor: pointer;
+}
+.headerlink:hover{
+    color: #ed0a0a;
+}
+li {
+    margin: 5px 0; /* Margin for list items */
+}
+.divide{
+    padding: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+    /* margin-bottom: 20px; */
+     /* Add margin bottom for spacing */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    /* position: sticky; */
+    /* top: 102px; */
+    z-index: 1000;
+    display: flex;
+    gap: 20px;
+}
+.filter{
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #5d5d5d;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 20px;
+    font-weight: bold;
+    /* hover */
+    /* transition: background-color 0.3s ease; */
+}
+.filter:hover {
+    cursor: pointer; /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+/* Search Styles */
+.search {
+     /* White background for search */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.search_box{
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.search_button{
+    padding: 7px;
+    font-size: 14px;
+    border: 1px solid #5d5d5d;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    /* hover */
+    transition: background-color 0.3s ease;
+    
+}
+.search_button:active {
+    background-color: #f0f0f0;
+ } 
+.search_button:hover {
+    cursor: pointer; /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+/* Image Container Styles */
+.img_container {
+    display: flex;
+    justify-content: center;
+    width: 85%;
+    margin: auto;
+    gap: 70px;
+    padding: 30px;
+    /* border: 1px solid #d60000; */
+    /* padding-left: 100px; */
+    /* background-color: red; */
+    /* margin-left: 50px;
+    margin-right: 50px; */
+    /* overflow-x: scroll; */
+    /* flex-wrap: wrap; */
+    overflow: scroll;
+
+}
+
+/* Hoverable Image Styles */
+.h_img {
+    /* width: 200px;
+    height: 200px; */
+    width: 144px;
+    aspect-ratio: auto 144 / 180;
+    height: 180px;
+    border-radius: 20%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Combine transitions */
+}
+
+.h_img:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+.shimmer_container{
+    /* background-color: red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.shimmer {
+    position: relative;
+    width: 250px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #f0f0f0;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e7e7e7 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.outlets{
+    display: flex;
+    justify-content:space-between;
+    gap: 20px;
+    padding: 20px;
+    /* background-color: #e4e3e3; */
+    border-radius: 10px;
+    margin: 10px;
+}
+.outlets>img{
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.outlets>img:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+.contentOfOutlet{
+    font-family:'Gilroy-Bold' , sans-serif;
+    padding: 10px;
+    font-size: 14px;
+    /* width: 50%; */
+    font-weight: 200;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    overflow-wrap: break-word;
+}
+.itemName{
+    font-family:' Gilroy-Bold';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+}
+.price{
+    font-family:'Gilroy-Bold', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.description{
+    display: flex;
+    -webkit-box-align: end;
+    align-items: end;
+    margin-top: 12px;
+    word-break: break-all;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.horizontalLine{
+    height: 0.5px;
+    background-color: rgba(2, 6, 12, 0.15);
+    width: calc(100% - 32px);
+    margin: 24px auto;
+}
+.mainContainer{
+    max-width: 800px;
+    min-height: 800px;
+    margin: 20px auto 0;
+    font-family: 'Gilroy-Bold', sans-serif;
+    /* background-color: red; */
+}
+.mainContent{
+    background: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+    padding: 0px 16px 16px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+}
+.heading_name{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 16px;
+    margin-bottom: 8px;
+    font-family: Gilroy;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.mainContentTwo{
+    border-radius: 20px;
+    border: 1px solid rgba(2, 6, 12, 0.15);
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+}
+.insideUl{
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    padding-left: 24px;
+}
+.card_link{
+    color: rgba(2, 6, 12, 0.92); 
+}
