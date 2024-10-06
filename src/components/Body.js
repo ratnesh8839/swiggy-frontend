@@ -12,12 +12,14 @@ const Body = () => {
   }, []);
   const fetched = async () => {
     try {
-      const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=28.6139298&lng=77.2088282", {
+      // const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=28.6139298&lng=77.2088282", {
+      const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6139298&lng=77.2088282&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING", {
         cache: "no-store",
       });
       const json_data = await data.json();
       console.log(json_data);
-      const arr = json_data?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+      // const arr = json_data?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+      const arr = json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       setResData(arr);
 
       setTemp(arr);
