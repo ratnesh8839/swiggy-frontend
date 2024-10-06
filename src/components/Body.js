@@ -28,7 +28,7 @@ const Body = () => {
       console.log(e);
     }
   }
-  if (resData.length === 0) {
+  if (resData.length == 0) {
     return <div>
       <HeaderTwo images={Bannerr} />
       <div className="res_container"><Shimmer /></div>
