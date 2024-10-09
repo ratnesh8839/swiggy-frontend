@@ -10,8 +10,10 @@ import Contact from './components/Contact';
 import Error from './components/Error';
 import About from './components/About';
 import Restaurent_Menu from './components/Restaurent_Menu';
-
-
+// import GroceryItem from './components/GroceryItem';
+import {lazy,Suspense} from 'react';
+import Shimmer from './components/Shimmer';
+const GroceryItem = lazy (()=>import('./components/GroceryItem'));
 const AppLayout = () => {
   return (
     <div className='app'>
@@ -40,6 +42,10 @@ const appRoute = createBrowserRouter([
     {
       path:'/about',
       element:<About/>,
+    },
+    {
+      path:'/grocery',
+      element:(<Suspense fallback={<Shimmer/>}><GroceryItem/></Suspense>),
     },
     {
       path:'/restaurent/:resId',

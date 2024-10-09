@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   // let val = "Login";
+  const onlineStatus = useOnlineStatus();
   let [val,setVal] = useState("Login");
   let [inputText,setInputText] = useState("");
     return (
@@ -12,6 +14,8 @@ const Header = () => {
         </div>
         <div className='navbar'>
           <ul>
+            <li>Online Status:{onlineStatus ? " ✅":" 🔴"}</li>
+            <li><Link className="headerlink" to="/grocery">Grocery</Link></li>
             <li><Link className="headerlink" to="/">Home</Link></li>
             <li><Link className="headerlink" to="/about">About</Link></li>
             <li><Link className="headerlink" to="/contact">Contact</Link></li>

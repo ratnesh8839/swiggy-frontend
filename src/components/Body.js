@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import HeaderTwo from "./HeaderTwo";
 import { Bannerr } from "../utils/constants";
+import useOnlineStatus  from "../utils/useOnlineStatus";
+import Offline from "./Offline";
 const Body = () => {
   const [resData, setResData] = useState([]);
   const [inputText, setInputText] = useState("");
@@ -27,6 +29,10 @@ const Body = () => {
     catch (e) {
       console.log(e);
     }
+  }
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false){
+    return <Offline/>
   }
   if (resData.length == 0) {
     return <div>
