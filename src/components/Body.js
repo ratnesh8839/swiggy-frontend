@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card, { withRating } from "./Card";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import HeaderTwo from "./HeaderTwo";
@@ -6,9 +6,12 @@ import { Bannerr } from "../utils/constants";
 import useOnlineStatus  from "../utils/useOnlineStatus";
 import Offline from "./Offline";
 const Body = () => {
-  const [resData, setResData] = useState([]);
+  const [resData, setResData] = useState(null);
   const [inputText, setInputText] = useState("");
   const [temp, setTemp] = useState([]);
+  console.log(resData);
+  const CardWithRating = withRating(Card);
+
   useEffect(() => {
     fetched();
   }, []);
@@ -34,7 +37,8 @@ const Body = () => {
   if(onlineStatus === false){
     return <Offline/>
   }
-  if (resData.length == 0) {
+
+  if (resData == null) {
     return <div>
       <HeaderTwo images={Bannerr} />
       <div className="res_container"><Shimmer /></div>
@@ -68,7 +72,8 @@ const Body = () => {
       <div className="res_container">
         {
           resData.map((myList) => (
-            <Card key={myList.info.id} resData={myList} />
+            (myList.info.avgRating > 4.4) ? (<CardWithRating resData={myList}/>) : (<Card key={myList.info.id} resData={myList} />)
+            // <CardWithRating key={myList.info.id} resData={myList} />
           ))
         }
 

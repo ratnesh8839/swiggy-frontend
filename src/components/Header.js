@@ -15,11 +15,11 @@ const Header = () => {
         <div className='navbar'>
           <ul>
             <li>Online Status:{onlineStatus ? " ✅":" 🔴"}</li>
-            <li><Link className="headerlink" to="/grocery">Grocery</Link></li>
+            <li><Link className="headerlink" to={onlineStatus ?"/grocery":"/"}>Grocery</Link></li>
             <li><Link className="headerlink" to="/">Home</Link></li>
-            <li><Link className="headerlink" to="/about">About</Link></li>
-            <li><Link className="headerlink" to="/contact">Contact</Link></li>
-            <li><Link className="headerlink" to="/profile">Profile</Link></li>
+            <li><Link className="headerlink" to={onlineStatus ?"/about":"/"}>About</Link></li>
+            <li><Link className="headerlink" to={onlineStatus ?"/contact":"/"}>Contact</Link></li>
+            <li><Link className="headerlink" to={onlineStatus ?"/profile":"/"}>Profile</Link></li>
             
 
             {/* <button className="log" onClick={(e)=>{
