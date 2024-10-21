@@ -1,5 +1,5 @@
+
 import UserClass from "./User";
-import User from "./User";
 
 // create a about page
 const About = () => {

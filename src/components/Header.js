@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   // let val = "Login";
   const onlineStatus = useOnlineStatus();
   let [val,setVal] = useState("Login");
   let [inputText,setInputText] = useState("");
+  const {loggedInUser} = useContext(UserContext);
     return (
       <div className='header'>
         <div className='logo-container'>
@@ -15,12 +17,12 @@ const Header = () => {
         <div className='navbar'>
           <ul>
             <li>Online Status:{onlineStatus ? " ✅":" 🔴"}</li>
-            <li><Link className="headerlink" to="/grocery">Grocery</Link></li>
+            <li><Link className="headerlink" to={onlineStatus ?"/grocery":"/"}>Grocery</Link></li>
             <li><Link className="headerlink" to="/">Home</Link></li>
-            <li><Link className="headerlink" to="/about">About</Link></li>
-            <li><Link className="headerlink" to="/contact">Contact</Link></li>
-            <li><Link className="headerlink" to="/profile">Profile</Link></li>
-            
+            <li><Link className="headerlink" to={onlineStatus ?"/about":"/"}>About</Link></li>
+            <li><Link className="headerlink" to={onlineStatus ?"/contact":"/"}>Contact</Link></li>
+            <li><Link className="headerlink" to={onlineStatus ?"/profile":"/"}>Profile</Link></li>
+            <li className="font-bold">{loggedInUser}</li>
 
             {/* <button className="log" onClick={(e)=>{
               // console.log(e);

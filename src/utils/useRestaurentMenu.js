@@ -10,6 +10,7 @@ const fetched = async () => {
     const json = await data.json();
     setResInfo(json);
 }
+// console.log(resId);
 return resInfo;
 }
 
