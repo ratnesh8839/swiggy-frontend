@@ -9,18 +9,18 @@ const Card = (props) => {
   const { costForTwo, cloudinaryImageId, name, avgRating, cuisines, locality, totalRatingsString } = resData?.info;
   const {header} = props?.resData?.info.aggregatedDiscountInfoV3 || {};
   const {subHeader} = props?.resData?.info.aggregatedDiscountInfoV3 || {};
-  console.log('/reasturent/' + resData.info.id);
+  // console.log('/reasturent/' + resData.info.id);
   return (
   <Link className="card_link" to={'/restaurent/' + resData.info.id}>
     <div className="cards">
-     {header && subHeader &&(<span class="rating-number">{header +" " + subHeader}</span>)}
+     {header && subHeader &&(<span className="rating-number">{header +" " + subHeader}</span>)}
       <div className="item">
         <img className='item_image' src={CLOUDINARY + cloudinaryImageId} alt="" />
         <div className="content">
           <ul>
             <li><h4>{name}</h4></li>
             <li>{avgRating}⭐</li>
-            <li>{cuisines.join(",")}</li>
+            <li className="">{cuisines.join(",")}</li>
             <li>{locality}</li>
             <li>{costForTwo}</li>
             <li>{totalRatingsString}</li>

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   // let val = "Login";
@@ -9,6 +10,7 @@ const Header = () => {
   let [val,setVal] = useState("Login");
   let [inputText,setInputText] = useState("");
   const {loggedInUser} = useContext(UserContext);
+  const cartItem = useSelector(store => store.cart.items);
     return (
       <div className='header'>
         <div className='logo-container'>
@@ -21,9 +23,8 @@ const Header = () => {
             <li><Link className="headerlink" to="/">Home</Link></li>
             <li><Link className="headerlink" to={onlineStatus ?"/about":"/"}>About</Link></li>
             <li><Link className="headerlink" to={onlineStatus ?"/contact":"/"}>Contact</Link></li>
-            <li><Link className="headerlink" to={onlineStatus ?"/profile":"/"}>Profile</Link></li>
-            <li className="font-bold">{loggedInUser}</li>
-
+            <li><Link to={onlineStatus ?"/cart":"/"}><button className="font-bold">Cart({cartItem.length})</button></Link></li>
+            <li><Link className="headerlink font-bold" to={onlineStatus ?"/profile":"/"}>{loggedInUser}</Link></li>
             {/* <button className="log" onClick={(e)=>{
               // console.log(e);
               if(val==="Login") setVal("Logout");

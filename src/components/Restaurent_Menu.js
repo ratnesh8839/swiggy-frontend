@@ -25,7 +25,7 @@ const Restaurent_Menu = (e) => {
         return <p>No items available for this restaurant.</p>;
     }
     
-console.log(category);
+// console.log(category);
     return (
         <div className="w-1/2 m-auto mt-5">
             <h1 className="font-bold py-2 text-2xl font-sans ">{name}</h1>

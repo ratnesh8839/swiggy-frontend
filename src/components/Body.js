@@ -9,7 +9,7 @@ const Body = () => {
   const [resData, setResData] = useState(null);
   const [inputText, setInputText] = useState("");
   const [temp, setTemp] = useState([]);
-  console.log(resData);
+  // console.log(resData);
   const CardWithRating = withRating(Card);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Body = () => {
         cache: "no-store",
       });
       const json_data = await data.json();
-      console.log(json_data);
+      // console.log(json_data);
       // const arr = json_data?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
       const arr = json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       setResData(arr);
@@ -59,7 +59,7 @@ const Body = () => {
           setInputText(e.target.value);
         }} />
           <button className="filter " onClick={() => {
-            console.log(temp);
+            // console.log(temp);
             const newList = temp.filter((item) => {
               return item.info.name.toLowerCase().includes(inputText.toLowerCase());
             })
@@ -72,7 +72,7 @@ const Body = () => {
       <div className="res_container">
         {
           resData.map((myList) => (
-            (myList.info.avgRating > 4.4) ? (<CardWithRating resData={myList}/>) : (<Card key={myList.info.id} resData={myList} />)
+            (myList.info.avgRating > 4.4) ? (<CardWithRating key={myList.info.id} resData={myList}/>) : (<Card key={myList.info.id} resData={myList} />)
             // <CardWithRating key={myList.info.id} resData={myList} />
           ))
         }
